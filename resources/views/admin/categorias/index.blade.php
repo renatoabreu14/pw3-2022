@@ -4,7 +4,7 @@
 
 
     <div class="container">
-        <div class="row justify-content-md-right">
+        <div class="row">
             <a href="{{route('categorias.create')}}" class="btn btn-success">Novo</a>
         </div>
         <div class="row">
@@ -19,7 +19,13 @@
                     @foreach($categorias as $categoria)
                     <tr>
                         <td>{{$categoria->nome}}</td>
-                        <td></td>
+                        <td>
+                            <form action="{{route('categorias.destroy', $categoria)}}" method="post">
+                                @method('DELETE')
+                                @csrf
+                                <button class="btn btn-danger" type="submit">Excluir</button>
+                            </form>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
