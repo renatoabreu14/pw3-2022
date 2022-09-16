@@ -1,8 +1,6 @@
 @extends('admin.main')
 
 @section('conteudo')
-
-
     <div class="container">
         <div class="row">
             <a href="{{route('categorias.create')}}" class="btn btn-success">Novo</a>

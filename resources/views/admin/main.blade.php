@@ -110,9 +110,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
-                            <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                            Products
+                        <a class="nav-link" href="{{route('subcategorias.index')}}">
+                            <span data-feather="layers" class="align-text-bottom"></span>
+                            Subcategorias
                         </a>
                     </li>
                     <li class="nav-item">
