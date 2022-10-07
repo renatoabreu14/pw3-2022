@@ -3,7 +3,7 @@
 @section('conteudo')
     <div class="container">
         <div class="row">
-            <form action="{{route('produtos.store')}}" method="post">
+            <form action="{{route('produtos.store')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="nome">Nome:</label>
@@ -29,6 +29,10 @@
                             <option value="{{$subcategoria->id}}">{{$subcategoria->nome}}</option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form-group">
+                    <label for="imagem">Imagem</label>
+                    <input type="file" name="imagem" id="imagem" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="descricao">Descricão:</label>

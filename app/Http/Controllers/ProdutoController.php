@@ -15,7 +15,7 @@ class ProdutoController extends Controller
      */
     public function index()
     {
-        $produtos = Produto::all();
+        $produtos = Produto::paginate(10);
         return view('admin.produtos.index', compact('produtos'));
     }
 
@@ -38,6 +38,7 @@ class ProdutoController extends Controller
      */
     public function store(Request $request)
     {
+        //https://blog.especializati.com.br/upload-de-arquivos-no-laravel-com-request/
         Produto::create($request->all());
         return redirect()->route('produtos.index');
     }
