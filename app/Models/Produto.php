@@ -14,7 +14,8 @@ class Produto extends Model
         'descricao',
         'valor',
         'estoque',
-        'subcategoria_id'
+        'subcategoria_id',
+        'imagem'
     ];
 
     public function subcategoria(){

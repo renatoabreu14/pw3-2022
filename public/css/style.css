@@ -22,3 +22,8 @@
 .form-group{
     margin-top: 3px;
 }
+
+#produto-imagem{
+    width: 150px;
+    height: 150px;
+}

@@ -39,8 +39,25 @@ class ProdutoController extends Controller
     public function store(Request $request)
     {
         //https://blog.especializati.com.br/upload-de-arquivos-no-laravel-com-request/
-        Produto::create($request->all());
-        return redirect()->route('produtos.index');
+
+        $nameFile = null;
+        if ($request->hasFile('imagem') && $request->file('imagem')->isValid()){
+            $name = uniqid(date('HisYmd'));
+            $extension = $request->imagem->extension();
+            $nameFile = $name . "." .$extension;
+            $upload = $request->file('imagem')->storeAs('public/produtos/', $nameFile);
+            if (!$upload){
+                return redirect()
+                    ->back()
+                    ->with('error', 'Falha ao fazer upload')
+                    ->withInput();
+            }else{
+                $produto = Produto::create($request->all());
+                $produto->imagem = $nameFile;
+                $produto->save();
+                return redirect()->route('produtos.index');
+            }
+        }
     }
 
     /**
