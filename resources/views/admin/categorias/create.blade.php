@@ -7,8 +7,11 @@
                 @csrf
                 <div class="form-group">
                     <label for="nome">Nome:</label>
-                    <input type="text" name="nome" id="nome" class="form-control" required>
+                    <input type="text" name="nome" id="nome" class="form-control">
                 </div>
+                @error('nome')
+                    <p class="text-danger">{{$message}}</p>
+                @enderror
                 <div class="form-group">
                     <button class="btn btn-success" type="submit">Gravar</button>
                     <a class="btn btn-danger" href="{{route('categorias.index')}}">Cancelar</a>

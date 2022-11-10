@@ -133,9 +133,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">
+                        <a class="nav-link" href="{{route('produtos.index')}}">
                             <span data-feather="users" class="align-text-bottom"></span>
-                            Customers
+                            Produtos
                         </a>
                     </li>
                     <li class="nav-item">
