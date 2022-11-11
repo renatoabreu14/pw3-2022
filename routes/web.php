@@ -17,6 +17,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('vitrine', function (){
+    return view('vitrine.main');
+});
+Route::get('vitrine/shop', function (){
+    return view('vitrine.shop');
+});
+Route::get('vitrine/single', function (){
+    return view('vitrine.single');
+});
+
 Route::resource('categorias', \App\Http\Controllers\CategoriaController::class)->middleware(['auth', 'verified']);
 Route::resource('subcategorias', \App\Http\Controllers\SubcategoriaController::class)->middleware(['auth', 'verified']);
 Route::resource('produtos', \App\Http\Controllers\ProdutoController::class)->middleware(['auth', 'verified']);
