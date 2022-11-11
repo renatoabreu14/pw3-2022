@@ -17,10 +17,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('vitrine', function (){
-    return view('vitrine.main');
-});
-Route::get('vitrine/shop', function (){
+Route::get('vitrine', [\App\Http\Controllers\VitrineController::class, 'index']);
+
+Route::get('vitrine/categoria/{id}', [\App\Http\Controllers\VitrineController::class, 'listarProdutosPorCategoria'])->name('vitrine.categoria');
+Route::get('vitrine/subcategoria/{id}', [\App\Http\Controllers\VitrineController::class, 'listarProdutosPorSubCategoria'])->name('vitrine.subcategoria');
+
+    Route::get('vitrine/shop', function (){
     return view('vitrine.shop');
 });
 Route::get('vitrine/single', function (){

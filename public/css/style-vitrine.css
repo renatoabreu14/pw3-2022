@@ -1003,3 +1003,62 @@ div.cart-collaterals ul.products li.product:hover .add_to_cart_button{background
 .pagination > li > a, .pagination > li > span {
     color: #1abc9c;
 }
+
+/*Menu dropdown*/
+nav ul li a {
+    display: block;
+    color: rgba(255, 255, 255, .9);
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    transition: all .3s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+    background: rgba(0, 0, 0, .15);
+}
+
+nav ul li a:focus {
+    color: white;
+}
+
+nav ul li a:not(:only-child)::after {
+    padding-left: 4px;
+    content: ' ▾';
+}
+
+nav ul li ul li {
+    min-width: 190px;
+}
+
+nav ul li ul li a {
+    background: transparent;
+    color: #555;
+    border-bottom: 1px solid #DDE0E7;
+}
+
+nav ul li ul li a:hover,
+nav ul li ul li a:focus {
+    background: #eee;
+    color: #111;
+}
+
+.dropdown {
+    display: none;
+    position: absolute;
+    background: #222;
+    box-shadow: 0 4px 10px rgba(10, 20, 30, .4);
+    list-style: none;
+    z-index: 99;
+}
+
+.dropdown2 {
+    display: none;
+    position: absolute;
+    background: #222;
+    box-shadow: 0 4px 10px rgba(10, 20, 30, .4);
+    list-style: none;
+    z-index: 99;
+}

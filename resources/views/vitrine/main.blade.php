@@ -103,12 +103,27 @@
                 </button>
             </div>
             <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop page</a></li>
-                    <li><a href="single-product.html">Single product</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                </ul>
+                <nav class="nav">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="drop"><a href="shop.html">Categorias</a>
+                            <ul class="dropdown">
+                                @foreach($categorias as $categoria)
+                                    <li><a href="{{route('vitrine.categoria', $categoria->id)}}">{{$categoria->nome}}</a></li>
+                                @endforeach
+
+                            </ul>
+                        </li>
+                        <li class="drop2"><a href="single-product.html">Subcategorias</a>
+                            <ul class="dropdown2">
+                                @foreach($subcategorias as $subcategoria)
+                                    <li><a href="#">{{$subcategoria->nome}}</a></li>
+                                @endforeach
+                            </ul>
+                        </li>
+                        <li><a href="cart.html">Cart</a></li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </div>
