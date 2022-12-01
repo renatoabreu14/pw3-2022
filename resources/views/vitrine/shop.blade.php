@@ -117,7 +117,7 @@
                         <li class="drop2"><a href="single-product.html">Subcategorias</a>
                             <ul class="dropdown2">
                                 @foreach($subcategorias as $subcategoria)
-                                    <li><a href="#">{{$subcategoria->nome}}</a></li>
+                                    <li><a href="{{route('vitrine.subcategoria', $subcategoria->id)}}">{{$subcategoria->nome}}</a></li>
                                 @endforeach
                             </ul>
                         </li>

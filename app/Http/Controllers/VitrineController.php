@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categoria;
+use App\Models\Produto;
 use App\Models\Subcategoria;
 use Illuminate\Http\Request;
 
@@ -25,5 +26,14 @@ class VitrineController extends Controller
     public function listarProdutosPorSubCategoria($id){
         $categorias = Categoria::all();
         $subcategorias = Subcategoria::all();
+        $verSubCategoria = Subcategoria::findOrFail($id);
+        return view('vitrine.subcategorias.index', compact('categorias', 'subcategorias', 'verSubCategoria'));
+    }
+
+    public function mostrarProduto($id){
+        $categorias = Categoria::all();
+        $subcategorias = Subcategoria::all();
+        $produto = Produto::findOrFail($id);
+        return view('vitrine.produtos.index', compact('categorias', 'subcategorias', 'produto'));
     }
 }
