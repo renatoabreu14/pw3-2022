@@ -1062,3 +1062,47 @@ nav ul li ul li a:focus {
     list-style: none;
     z-index: 99;
 }
+
+
+/*CSS APOS CARRINHO DE COMPRAS*/
+.item-image-cart{
+    width: 100px;
+    height: 100px;
+}
+
+.item-quantity-cart{
+    width: 60px;
+}
+
+.table-head-cart{
+    text-transform: uppercase;
+    font-size: 25px;
+}
+
+.column-name-cart{
+    width: 500px;
+}
+
+.table-body-cart{
+    font-size: 18px;
+}
+
+.table-foot-cart{
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-navigate{
+    text-transform: uppercase;
+}
+
+.cart-navigate .btn{
+    font-weight: bold;
+    font-size: 22px;
+}
+
+#empty-cart{
+    text-align: center;
+    font-size: 25px;
+}
