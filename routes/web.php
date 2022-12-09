@@ -38,6 +38,8 @@ Route::delete('vitrine/carrinho', [\App\Http\Controllers\CarrinhoComprasControll
 Route::put('vitrine/carrinho', [\App\Http\Controllers\CarrinhoComprasController::class, 'alterarItemCarrinho'])->name('vitrine.updcarrinho');
 Route::get('vitrine/carrinho/clear', [\App\Http\Controllers\CarrinhoComprasController::class, 'limparCarrinho'])->name('vitrine.clearcarrinho');
 //FIM CARRINHO DE COMPRAS
+
+
 Route::resource('categorias', \App\Http\Controllers\CategoriaController::class)->middleware(['auth', 'verified']);
 Route::resource('subcategorias', \App\Http\Controllers\SubcategoriaController::class)->middleware(['auth', 'verified']);
 Route::resource('produtos', \App\Http\Controllers\ProdutoController::class)->middleware(['auth', 'verified']);
